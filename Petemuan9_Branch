@@ -1,0 +1,487 @@
+petik@petik:/var/www/html/MPA/P9_branch$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /var/www/html/MPA/P9_branch/.git/
+petik@petik:/var/www/html/MPA/P9_branch$ nano mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan file mahasantri.txt"
+[master (root-commit) 9e765dd] Menambahkan file mahasantri.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git branch dosen
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+  dosen
+* master
+petik@petik:/var/www/html/MPA/P9_branch$ git branch -h
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+petik@petik:/var/www/html/MPA/P9_branch$ git -h
+unknown option: -h
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -a
+On branch master
+nothing to commit, working tree clean
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -h
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+  dosen
+* master
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout dosen
+Switched to branch 'dosen'
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ nano dosen.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan file dosen.txt"
+[dosen 4ef2cc5] Menambahkan file dosen.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 dosen.txt
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+dosen.txt  mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout dosen
+Switched to branch 'dosen'
+petik@petik:/var/www/html/MPA/P9_branch$ git log --all --decorate --oneline --graph
+* 4ef2cc5 (HEAD -> dosen) Menambahkan file dosen.txt
+* 9e765dd (master) Menambahkan file mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ alias graph="git log --all --decorate --oneline --graph"
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ nano mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan mahasantri baru"
+[master 67532f6] Menambahkan mahasantri baru
+ 1 file changed, 1 insertion(+)
+petik@petik:/var/www/html/MPA/P9_branch$ cat mahasantri.txt
+Mahasantri PeTIK :
+1. Ucup
+2. Budi
+3. Bambang
+4. Putra
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout dosen
+Switched to branch 'dosen'
+petik@petik:/var/www/html/MPA/P9_branch$ cat mahasantri.txt
+Mahasantri PeTIK :
+1. Ucup
+2. Budi
+3. Bambang
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+dosen.txt  mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git branch staff
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout staff
+Switched to branch 'staff'
+petik@petik:/var/www/html/MPA/P9_branch$ nano staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+  dosen
+  master
+* staff
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+dosen.txt  mahasantri.txt  staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan file staff.txt"[staff b05407a] Menambahkan file staff.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ git merge dosen
+Merge made by the 'ort' strategy.
+ dosen.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 dosen.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+  dosen
+* master
+  staff
+petik@petik:/var/www/html/MPA/P9_branch$ git branch -d dosen
+Deleted branch dosen (was 4ef2cc5).
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+* master
+  staff
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+dosen.txt  mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ graph
+*   ec22790 (HEAD -> master) Merge branch 'dosen'
+|\  
+* | 67532f6 Menambahkan mahasantri baru
+| | * b05407a (staff) Menambahkan file staff.txt
+| |/  
+| * 4ef2cc5 Menambahkan file dosen.txt
+|/  
+* 9e765dd Menambahkan file mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git merge staff
+Merge made by the 'ort' strategy.
+ staff.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+* master
+  staff
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+dosen.txt  mahasantri.txt  staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ graph
+*   7ccf501 (HEAD -> master) Merge branch 'staff'
+|\  
+| * b05407a (staff) Menambahkan file staff.txt
+* | ec22790 Merge branch 'dosen'
+|\| 
+| * 4ef2cc5 Menambahkan file dosen.txt
+* | 67532f6 Menambahkan mahasantri baru
+|/  
+* 9e765dd Menambahkan file mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout staff
+Switched to branch 'staff'
+petik@petik:/var/www/html/MPA/P9_branch$ cat staff.txt
+Staff PeTIK :
+1. Asep
+2. Samsul
+3. Udin
+petik@petik:/var/www/html/MPA/P9_branch$ nano staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan staff baru"
+[staff d40df7d] Menambahkan staff baru
+ 1 file changed, 1 insertion(+)
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan file buah.txt"
+[staff 2bd4fb8] Menambahkan file buah.txt
+ 1 file changed, 3 insertions(+)
+ create mode 100644 buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ cat staff.txt
+Staff PeTIK :
+1. Asep
+2. Samsul
+3. Udin
+4. Alam
+petik@petik:/var/www/html/MPA/P9_branch$ cat buah.txt
+Nama Buah :
+1. Apel
+2. Anggur
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ git merge staff
+Merge made by the 'ort' strategy.
+ buah.txt  | 3 +++
+ staff.txt | 1 +
+ 2 files changed, 4 insertions(+)
+ create mode 100644 buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+buah.txt  dosen.txt  mahasantri.txt  staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ cat staff.txt
+Staff PeTIK :
+1. Asep
+2. Samsul
+3. Udin
+4. Alam
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan buah jeruk & semangka"
+[master 37dc24a] Menambahkan buah jeruk & semangka
+ 1 file changed, 2 insertions(+)
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout staff
+Switched to branch 'staff'
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan buah Pisang"
+[staff d83ad61] Menambahkan buah Pisang
+ 1 file changed, 2 insertions(+)
+petik@petik:/var/www/html/MPA/P9_branch$ cat buah.txt
+Nama Buah :
+1. Apel
+2. Anggur
+3. Jeruk
+4. Pisang
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ cat buah.txt
+Nama Buah :
+1. Apel
+2. Anggur
+3. Jeruk
+4. Semangka
+petik@petik:/var/www/html/MPA/P9_branch$ git merge staff
+Auto-merging buah.txt
+CONFLICT (content): Merge conflict in buah.txt
+Automatic merge failed; fix conflicts and then commit the result.
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menyelesaikan konflik"
+[master ec01759] Menyelesaikan konflik
+petik@petik:/var/www/html/MPA/P9_branch$ cat buah.txt
+Nama Buah :
+1. Apel
+2. Anggur
+3. Jeruk
+4. Pisang
+
+petik@petik:/var/www/html/MPA/P9_branch$ graph
+*   ec01759 (HEAD -> master) Menyelesaikan konflik
+|\  
+| * d83ad61 (staff) Menambahkan buah Pisang
+* | 37dc24a Menambahkan buah jeruk & semangka
+* | 6c649aa Merge branch 'staff'
+|\| 
+| * 2bd4fb8 Menambahkan file buah.txt
+| * d40df7d Menambahkan staff baru
+* | 7ccf501 Merge branch 'staff'
+|\| 
+| * b05407a Menambahkan file staff.txt
+* | ec22790 Merge branch 'dosen'
+|\| 
+| * 4ef2cc5 Menambahkan file dosen.txt
+* | 67532f6 Menambahkan mahasantri baru
+|/  
+* 9e765dd Menambahkan file mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan buah baru"
+[master 4eba693] Menambahkan buah baru
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout staff
+Switched to branch 'staff'
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan buah baru"
+[staff 2f77cb0] Menambahkan buah baru
+ 1 file changed, 2 insertions(+)
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ git merge staff
+Auto-merging buah.txt
+CONFLICT (content): Merge conflict in buah.txt
+Automatic merge failed; fix conflicts and then commit the result.
+petik@petik:/var/www/html/MPA/P9_branch$ nano buah.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menyelesaikan konflik"
+[master 3abb08e] Menyelesaikan konflik
+petik@petik:/var/www/html/MPA/P9_branch$ cat buah.txt
+Nama Buah :
+1. Apel
+2. Anggur
+3. Jeruk
+4. Pisang
+5. Manggis
+6. Kiwi
+
+petik@petik:/var/www/html/MPA/P9_branch$ git branch -d staff
+Deleted branch staff (was 2f77cb0).
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+* master
+petik@petik:/var/www/html/MPA/P9_branch$ git branch main
+petik@petik:/var/www/html/MPA/P9_branch$ git branch 
+  main
+* master
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout main
+Switched to branch 'main'
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+buah.txt  dosen.txt  mahasantri.txt  staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ nano list.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Menambahkan file list.txt"
+[main c345a73] Menambahkan file list.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 list.txt
+petik@petik:/var/www/html/MPA/P9_branch$ nano dosen.txt
+petik@petik:/var/www/html/MPA/P9_branch$ git add .
+petik@petik:/var/www/html/MPA/P9_branch$ git commit -m "Mengubah nama dosen no.1"
+[main a965199] Mengubah nama dosen no.1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+petik@petik:/var/www/html/MPA/P9_branch$ git checkout master
+Switched to branch 'master'
+petik@petik:/var/www/html/MPA/P9_branch$ git merge main
+Updating 3abb08e..a965199
+Fast-forward
+ dosen.txt | 2 +-
+ list.txt  | 4 ++++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+ create mode 100644 list.txt
+petik@petik:/var/www/html/MPA/P9_branch$ ls
+buah.txt  dosen.txt  list.txt  mahasantri.txt  staff.txt
+petik@petik:/var/www/html/MPA/P9_branch$ cat dosen.txt
+Dosen PeTIK :
+1. Raka
+2. Arya
+3. Daud
+petik@petik:/var/www/html/MPA/P9_branch$ git branch -h
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+petik@petik:/var/www/html/MPA/P9_branch$ git branch -d main
+Deleted branch main (was a965199).
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+* master
+petik@petik:/var/www/html/MPA/P9_branch$ git branch -M main
+petik@petik:/var/www/html/MPA/P9_branch$ git branch
+* main
+petik@petik:/var/www/html/MPA/P9_branch$ graph
+* a965199 (HEAD -> main) Mengubah nama dosen no.1
+* c345a73 Menambahkan file list.txt
+*   3abb08e Menyelesaikan konflik
+|\  
+| * 2f77cb0 Menambahkan buah baru
+* | 4eba693 Menambahkan buah baru
+* | ec01759 Menyelesaikan konflik
+|\| 
+| * d83ad61 Menambahkan buah Pisang
+* | 37dc24a Menambahkan buah jeruk & semangka
+* | 6c649aa Merge branch 'staff'
+|\| 
+| * 2bd4fb8 Menambahkan file buah.txt
+| * d40df7d Menambahkan staff baru
+* | 7ccf501 Merge branch 'staff'
+|\| 
+| * b05407a Menambahkan file staff.txt
+* | ec22790 Merge branch 'dosen'
+|\| 
+| * 4ef2cc5 Menambahkan file dosen.txt
+* | 67532f6 Menambahkan mahasantri baru
+|/  
+* 9e765dd Menambahkan file mahasantri.txt
+petik@petik:/var/www/html/MPA/P9_branch$ 
+
