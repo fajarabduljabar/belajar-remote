@@ -1,0 +1,4 @@
+Nama-nama Barang :
+1. Meja
+2. Kursi
+3. Buku
