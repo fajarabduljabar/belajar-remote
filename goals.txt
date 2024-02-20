@@ -1,5 +1,5 @@
 Pencapaian di tahun 2024 :
-1. Bisa PHP
+1. Bisa CSS
 2. Bisa membuat aplikasi sederhana
 3. Bisa HTML
 4. Bisa menggunakan Bootstrap
