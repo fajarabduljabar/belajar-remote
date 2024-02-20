@@ -1,6 +1,0 @@
-Pencapaian :
-1. Hafal 2 juz
-2. Membuat aplikasi sederhana
-3. Bisa Framework Laravel
-4. Bisa HTML
-5. Bisa Menggunakan Bootstrap
