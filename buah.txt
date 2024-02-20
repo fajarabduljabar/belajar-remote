@@ -1,3 +1,5 @@
 Nama Buah :
 1. Apel
 2. Anggur
+3. Jeruk
+4. Semangka
